@@ -1,7 +1,7 @@
 import MensaxeAlert from "./Alert";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-function EngadirTarefa({ ActualizarTarefas }) {
+function EngadirTarefa({ ActualizarTarefas, estableceAlerta }) {
 
   const [InputTarefa, setInputTarefa] = useState("")
 
@@ -19,8 +19,8 @@ function EngadirTarefa({ ActualizarTarefas }) {
         ),
       }
     )
-    .then(Funciona)
-    .catch(Erro)
+      .then(Funciona)
+      .catch(Erro)
   }
 
   function Funciona(resposta) {
@@ -28,14 +28,12 @@ function EngadirTarefa({ ActualizarTarefas }) {
       setInputTarefa("")
       ActualizarTarefas()
     }
-    else (
-      <MensaxeAlert/>
-    )
+    else
+    alert("aaaaa")
   }
 
   function Erro(error) {
-    const aviso = <MensaxeAlert/>
-    
+      estableceAlerta()
   }
 
   function ManexadorInput(evento) {
