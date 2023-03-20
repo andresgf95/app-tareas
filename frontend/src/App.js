@@ -1,22 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import MensaxeAlert from './compoñentes/Alert';
 import EngadirTarefa from './compoñentes/EngadirTarefas';
-
+import GrupoTarefas from './compoñentes/GrupoTarefas';
 
 
 function App() {
 
-  const [alert, setAlert] = useState("")
+  const [tarefas, setTarefas] = useState([])
+
+  useEffect(
+    Callbacktarefas,
+    []
+  )
+
+  function Callbacktarefas() {
+    fetch("http://localhost:8000/tarefa/").then(
+      resposta=>{resposta.json().then(
+        (DatosActualizados)=>{setTarefas(DatosActualizados)}
+      )
+      }
+    ).catch()
+  }
 
 
 
   return (
     <>
-      <EngadirTarefa estableceAlerta={setAlert}/>
-
-      { alert != "" && <MensaxeAlert message={alert}/> }
-
+      <EngadirTarefa ActualizarTarefas={Callbacktarefas}/>
+      <GrupoTarefas tarefas={tarefas}/>
     </>
   );
 }

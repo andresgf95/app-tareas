@@ -1,7 +1,6 @@
-import MensaxeAlert from "./Alert";
 import { useState } from "react";
 
-function EngadirTarefa({ ActualizarTarefas, estableceAlerta }) {
+function EngadirTarefa({ ActualizarTarefas }) {
 
   const [InputTarefa, setInputTarefa] = useState("")
 
@@ -29,11 +28,11 @@ function EngadirTarefa({ ActualizarTarefas, estableceAlerta }) {
       ActualizarTarefas()
     }
     else
-    alert("aaaaa")
+    alert("Pechamos 5 minutos para ir ao baño, desculpen as molestias.")
   }
 
   function Erro(error) {
-      estableceAlerta()
+      alert("ATENCIÓN: EL GOBIERNO HA CAIDO. Todas las telecomunicación han sido restringidas a nivel estatal para proteger y salvaguardar la seguridad ciudadana. SE IMPONE UN TOQUE DE QUEDA A PARTIR DE LAS 21:00 Zona horaria de Madrid GMT+1")
   }
 
   function ManexadorInput(evento) {
