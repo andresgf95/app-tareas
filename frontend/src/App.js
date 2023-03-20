@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
-import EngadirTarefa from './compoñentes/EngadirTarefas';
 import GrupoTarefas from './compoñentes/GrupoTarefas';
 
 
@@ -25,10 +23,9 @@ function App() {
 
 
   return (
-    <>
-      <EngadirTarefa ActualizarTarefas={Callbacktarefas}/>
-      <GrupoTarefas tarefas={tarefas}/>
-    </>
+    <body className='corpo'>
+      <GrupoTarefas tarefas={tarefas} Callbacktarefas={Callbacktarefas}/>
+    </body>
   );
 }
 
