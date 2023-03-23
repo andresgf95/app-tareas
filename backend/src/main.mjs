@@ -34,6 +34,15 @@ app.get("/tarefa/", (_, respuesta)=>{
     respuesta.send(JSON.stringify(tarefas))
 })
 
+app.put("/tarefa/", (peticion, respuesta)=>{
+    let indice
+    indice = tarefas.findIndex((Item)=>{return Item.id === peticion.body.id})
+    tarefas.splice(indice, 1, "")
+    respuesta.status(200)
+    respuesta.send("ok")
+    }
+    )
+
 app.listen( 8000,()=>{
     console.log("Express traballando...");
 })
