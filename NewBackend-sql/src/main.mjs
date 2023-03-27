@@ -2,6 +2,7 @@ import express from "express"
 import cors from "cors"
 import sqlite3 from "sqlite3"
 import { GetTask } from "./get.mjs"
+import { PostTask } from "./post.mjs"
 
 const app = express()
 app.use(cors())
@@ -24,4 +25,8 @@ DataBase.run(`
 `);
 
 app.get("/tarefa/", GetTask)
+app.post("/tarefa/", PostTask)
 
+app.listen( 8000,()=>{
+    console.log("Express traballando...");
+})
