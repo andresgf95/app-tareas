@@ -13,7 +13,7 @@ function EngadirTarefa({ ActualizarTarefas }) {
           {
             id: Date.now(),
             descripcion: InputTarefa,
-            rematada: false,
+            rematada: (!false),
           }
         ),
       }
@@ -32,7 +32,7 @@ function EngadirTarefa({ ActualizarTarefas }) {
   }
 
   function Erro(error) {
-      alert("ATENCIÓN: EL GOBIERNO HA CAIDO. Todas las telecomunicación han sido restringidas a nivel estatal para proteger y salvaguardar la seguridad ciudadana. SE IMPONE UN TOQUE DE QUEDA A PARTIR DE LAS 21:00 Zona horaria de Madrid GMT+1")
+      error.alert("ATENCIÓN: EL GOBIERNO HA CAIDO. Todas las telecomunicación han sido restringidas a nivel estatal para proteger y salvaguardar la seguridad ciudadana. SE IMPONE UN TOQUE DE QUEDA A PARTIR DE LAS 21:00 Zona horaria de Madrid GMT+1")
   }
 
   function ManexadorInput(evento) {

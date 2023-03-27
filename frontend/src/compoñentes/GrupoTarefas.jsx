@@ -1,22 +1,19 @@
-import EngadirTarefa from './EngadirTarefas';
 import styles from './GrupoTarefas.module.css'
 
-function GrupoTarefas({tarefas, Callbacktarefas}) {
+function GrupoTarefas({tarefas}) {
 
 
     return (
-        <>
-        <EngadirTarefa ActualizarTarefas={Callbacktarefas}/>
+    <div className={styles.peza}>
         <ul>
-        {
-            tarefas.map(
-            tarefa=>
-            <li className={styles.li} type='square' key={tarefa.id}>{tarefa.descripcion} 
-            <input className={styles.input} type="checkbox" checked={tarefa.rematada}/></li>
+        {tarefas.map(tarefa=>
+            <li className="form-check form-switch" type='none' key={tarefa.id}>{tarefa.descripcion}
+            <input className="form-check-input" type="checkbox" checked={tarefa.rematada}/>
+            </li>
             )
         }
         </ul>
-        </>
+    </div>
     );
 }
 

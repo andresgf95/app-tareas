@@ -35,9 +35,8 @@ app.get("/tarefa/", (_, respuesta)=>{
 })
 
 app.put("/tarefa/", (peticion, respuesta)=>{
-    let indice
-    indice = tarefas.findIndex((Item)=>{return Item.id === peticion.body.id})
-    tarefas.splice(indice, 1, "")
+    const indice = tarefas.findIndex((Item)=>{return Item.id === peticion.body.id})
+    tarefas.splice(indice, 2, peticion.body.rematada)
     respuesta.status(200)
     respuesta.send("ok")
     }
