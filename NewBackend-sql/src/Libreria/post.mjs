@@ -1,3 +1,0 @@
-function PostTask(peticion, respuesta) {
-    
-}
