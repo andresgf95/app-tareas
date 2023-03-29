@@ -8,10 +8,10 @@ function PutTask(peticion, respuesta) {
             if (error) {
                 console.error(error)
                 respuesta.status(500)
-                respuesta.send("Algo pasa que esto non cambia")
+                respuesta.send("💩, consulta a consola")
             } else {
                 respuesta.status(200)
-                respuesta.send("Todo ben")
+                respuesta.send("👌")
             }
         }
     )

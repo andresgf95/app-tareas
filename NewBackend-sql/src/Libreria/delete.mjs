@@ -8,12 +8,13 @@ function DeleteTask(peticion,respuesta) {
             if (error) {
                 console.error(error)
                 respuesta.status(500)
-                respuesta.send("Algo falla, descubre máis na consola")
+                respuesta.send("💩, consulta a consola")
             } else {
                 respuesta.status(200)
-                respuesta.send("Todo ok")
+                respuesta.send("👌")
             }
         }
     )
 }
+
 export { DeleteTask }

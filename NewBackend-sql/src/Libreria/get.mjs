@@ -9,14 +9,14 @@ function GetTask(peticion, respuesta) {
                 if (error) {
                     console.error(error)
                     respuesta.status(200)
-                    respuesta.send('Non vai esto meu, seguro que a consola che da pistas.')
+                    respuesta.send('💩, consulta a consola')
                 } else {
                     if (task) {
                         respuesta.status(200)
                         respuesta.send(JSON.stringify(task))
                     } else {
                         respuesta.status(404)
-                        respuesta.send(`Meu, non atopei a tarefa id ${peticion.query.id}`)
+                        respuesta.send(`☢️ ${peticion.query.id}`)
                     }
                 }
             }
@@ -28,7 +28,7 @@ function GetTask(peticion, respuesta) {
                 if (error) {
                     console.error(error)
                     respuesta.status(500)
-                    respuesta.send('Non vai esto meu, seguro que a consola che da pistas.')
+                    respuesta.send('💩, consulta a consola')
                 } else {
                     respuesta.status(200)
                     respuesta.send(JSON.stringify(AllTasks))
