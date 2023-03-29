@@ -11,9 +11,8 @@ function EngadirTarefa({ ActualizarTarefas }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(
           {
-            id: Date.now(),
             descripcion: InputTarefa,
-            rematada: (!false),
+            rematada: false,
           }
         ),
       }
@@ -41,10 +40,8 @@ function EngadirTarefa({ ActualizarTarefas }) {
 
   return (
     <>
-      <div className="input-group">
-        <button className="btn btn-outline-success" type="button" onClick={ManexadorBoton} id="button-addon1">📝</button>
-        <input type="text" value={InputTarefa} onInput={ManexadorInput} className="form-control" placeholder="Engade Unha nova Tarefa" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-      </div>
+        <button type="button" onClick={ManexadorBoton}>📝</button>
+        <input type="text" value={InputTarefa} onInput={ManexadorInput} placeholder="Engade Unha nova Tarefa" />
     </>
   );
 }

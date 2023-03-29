@@ -29,7 +29,10 @@ function App() {
         <EngadirTarefa ActualizarTarefas={Callbacktarefas} />
       </div>
       <div>
-        <GrupoTarefas tarefas={tarefas}/>
+        <GrupoTarefas tarefas={tarefas} actualizaCheck={Callbacktarefas}/>
+      </div>
+      <div>
+        <button onClick={Callbacktarefas}>Actualiza</button>
       </div>
     </main>
   );
